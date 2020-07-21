@@ -1,0 +1,111 @@
+user{
+    _id:
+    fullName:
+    email: 
+    password:
+    phone:
+    gender:
+    city: 
+    saltSecret: 
+    tokens: [{ 
+                token: 
+            }]
+}
+
+class{
+    _id:
+    name:
+    roomNumber:
+}
+
+subject{
+    _id:
+    name:
+}
+
+classSubject{
+    _id:
+    class_id:
+    subject_id:
+}
+
+student{
+    _id:
+    name:
+    //other student related fields:
+    batch_name:
+}
+
+batch{
+    _id:
+    batch_name:
+    subject_name:
+    students:[
+             {_id:  ,name:}
+             ]
+    price:
+}
+
+studentSubject{
+    _id:
+    student_id:
+    subjects:[
+             {subject_name:    ,batch_name:},
+             {subject_name:    ,batch_name:},
+             ..............................
+             ]
+    fees:
+}
+
+subjectfees{
+    subject_id:
+    default_price:
+    increased_price:[
+                    {batch_name:    ,price:},
+                    {batch_name:    ,price:},
+                    ........................
+                    ]
+}
+userTimeTable{
+    _id:
+    user_id:
+    mon:[
+        {classSubject_id:   ,time:   },
+        {classSubject_id:   ,time:   },
+        ..............................
+    }]
+    tue:[
+        {classSubject_id:   ,time:   },
+        {classSubject_id:   ,time:   },
+        ..............................
+    }]
+    ...................................
+    sat:[
+        {classSubject_id:   ,time:   },
+        {classSubject_id:   ,time:   },
+        ..............................
+    }]
+}
+
+attendanceLog{
+    _id:
+    classSubject_id:
+    user_id:
+    time:    
+}
+
+absentLog{
+    _id:
+    attendanceLog_id:
+    student_id:
+}
+book{
+    name:
+    publication:
+    pub_year:
+    author:
+    edition:
+    prize:
+    copy:
+    supplier:
+}
